@@ -1,4 +1,4 @@
-from flask import Flask
+from flask import Flask, render_template
 
 
 app = Flask(__name__)
@@ -6,14 +6,12 @@ app = Flask(__name__)
 
 @app.route('/')
 def index():
-    return '''<h1>Hello, world</h>
-              <a href="/index">index</a>'''
+    return render_template('index.html')
 
 
 @app.route('/index')
 def href():
-    return '''<h1>Hello</h1>
-    <a href="/">index</a>'''
+    return render_template('fh.html')
 
 
 if __name__ == '__main__':
